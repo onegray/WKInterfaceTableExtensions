@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Table Sample-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="HomeScreenInterface" title="Table Sample" id="AgC-eL-Hgc" customClass="HomeScreenInterfaceController" customModule="WatchKitTableSample_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="XGY-OT-1q3">
+                            <items>
+                                <tableRow identifier="LabelCell" id="HKQ-uy-m5q" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="y0g-yh-Dnq">
+                                        <items>
+                                            <label width="1" alignment="left" verticalAlignment="center" text="Label" numberOfLines="2" id="qEv-8E-HNb"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="qEv-8E-HNb" id="KXZ-nr-6EW"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="XGY-OT-1q3" id="CkV-Ic-dNT"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="265" y="319"/>
+        </scene>
+        <!--Timer Sample-->
+        <scene sceneID="vaq-zf-w2B">
+            <objects>
+                <controller identifier="TimerSampleInterface" title="Timer Sample" id="BZU-b6-b7p" customClass="TimerInterfaceController" customModule="WatchKitTableSample_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="Maw-ki-gmh">
+                            <items>
+                                <tableRow identifier="TimerCell" selectable="NO" id="s4P-Dn-5ff" customClass="TimerCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="bOM-BT-LGd">
+                                        <items>
+                                            <timer width="1" alignment="left" verticalAlignment="center" textAlignment="center" id="xaV-yH-esR"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="timer" destination="xaV-yH-esR" id="gYD-0h-3Ma"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="StartCell" id="t6P-Xx-R0g" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="GoK-ZO-fEl">
+                                        <items>
+                                            <label width="1" alignment="left" verticalAlignment="center" text="Start" textAlignment="center" id="bx3-9J-0tG"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="bx3-9J-0tG" id="LVI-1v-NEc"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="StopCell" id="p89-Tq-nSo" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="wdS-7k-HWs">
+                                        <items>
+                                            <label width="1" alignment="left" verticalAlignment="center" text="Stop" textAlignment="center" id="ucN-0K-4hZ"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="ucN-0K-4hZ" id="W2r-ew-oaG"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="Maw-ki-gmh" id="zl8-uT-den"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="266" y="584"/>
+        </scene>
+        <!--Composit Table-->
+        <scene sceneID="ONx-pn-pW7">
+            <objects>
+                <controller identifier="CompositeTableInterface" title="Composit Table" id="bVt-kz-oCR" customClass="CompositeTableInterfaceController" customModule="WatchKitTableSample_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="iH9-iI-Ccy">
+                            <items>
+                                <tableRow identifier="HeaderCell" selectable="NO" id="ScO-yy-YKv" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="30" alignment="left" layout="vertical" radius="0.0" id="d3U-4R-33t" userLabel="CellGroup">
+                                        <items>
+                                            <group width="1" height="25" alignment="left" verticalAlignment="bottom" radius="5" id="cSd-p6-h0w" userLabel="Round Rect Group">
+                                                <items>
+                                                    <group width="1" height="21" alignment="left" id="wJk-ru-akF" userLabel="Gray Group">
+                                                        <items>
+                                                            <label alignment="left" verticalAlignment="center" text="Breakfast" id="7Im-nG-h66"/>
+                                                        </items>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <edgeInsets key="margins" left="7" right="0.0" top="0.0" bottom="0.0"/>
+                                                    </group>
+                                                </items>
+                                            </group>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="7Im-nG-h66" id="GTJ-H4-KUy"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="ItemCell" selectable="NO" id="I9z-Rh-ASW" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" radius="0.0" id="D6h-V3-sIc">
+                                        <items>
+                                            <label alignment="left" text="Raw apple" id="c41-It-3wq"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="c41-It-3wq" id="fcZ-F2-wkK"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="iH9-iI-Ccy" id="DeG-1S-MPv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="448" y="584"/>
+        </scene>
+    </scenes>
+</document>
