@@ -30,47 +30,47 @@ extension WKInterfaceTable {
 	
 	class Builder {
 		
-		func addCell<T> (rowType: String, configure: (cell:T) -> Void )  {
-			let configurator = GenericCellConfigureBlock(configure)
-			let cellConfiguration = CellConfiguration(rowType, configurator: configurator)
-			tableConfiguration.append(cellConfiguration)
+		func addRow<T> (rowType: String, configure: (row:T) -> Void )  {
+			let configurator = GenericRowConfigureBlock(configure)
+			let rowConfiguration = RowConfiguration(rowType, configurator: configurator)
+			tableConfiguration.append(rowConfiguration)
 		}
 		
-		func instantiateTableCells(table: WKInterfaceTable) {
+		func instantiateTableRows(table: WKInterfaceTable) {
 			let rowTypes = tableConfiguration.map({$0.rowType})
 			table.setRowTypes(rowTypes)
-			for (rowIndex, cellConfiguration) in enumerate(tableConfiguration) {
-				let cell: AnyObject = table.rowControllerAtIndex(rowIndex)!
-				cellConfiguration.configurator.configure(cell)
+			for (rowIndex, rowConfiguration) in enumerate(tableConfiguration) {
+				let row: AnyObject = table.rowControllerAtIndex(rowIndex)!
+				rowConfiguration.configurator.configure(row)
 			}
 		}
 
 		
-		private class CellConfigureBlock {
-			func configure(cell: AnyObject) {}
+		private class RowConfigureBlock {
+			func configure(row: AnyObject) {}
 		}
 		
-		private class CellConfiguration {
+		private class RowConfiguration {
 			let rowType: String
-			let configurator: CellConfigureBlock
-			init (_ rowType: String, configurator: CellConfigureBlock ) {
+			let configurator: RowConfigureBlock
+			init (_ rowType: String, configurator: RowConfigureBlock ) {
 				self.rowType = rowType
 				self.configurator = configurator
 			}
 		}
 		
-		private var tableConfiguration = [CellConfiguration]()
+		private var tableConfiguration = [RowConfiguration]()
 	}
 	
 }
 
-private class GenericCellConfigureBlock<T> : WKInterfaceTable.Builder.CellConfigureBlock {
+private class GenericRowConfigureBlock<T> : WKInterfaceTable.Builder.RowConfigureBlock {
 	let configureBlock: T -> Void
 	init(_ block: T -> Void ) {
 		configureBlock = block
 	}
-	override func configure(cell: AnyObject) {
-		configureBlock(cell as! T)
+	override func configure(row: AnyObject) {
+		configureBlock(row as! T)
 	}
 }
 
@@ -82,10 +82,10 @@ extension WKInterfaceTable {
 		return rowControllerAtIndex(index)
 	}
 	
-	func insertRowAtIndex<T> (index: Int, rowType: String, configure: (cell:T) -> Void )  {
+	func insertRowAtIndex<T> (index: Int, rowType: String, configure: (row:T) -> Void )  {
 		self.insertRowsAtIndexes(NSIndexSet(index: index), withRowType: rowType)
-		let cell: AnyObject = rowControllerAtIndex(index)!
-		configure(cell: cell as! T)
+		let row = rowControllerAtIndex(index) as! T
+		configure(row: row)
 	}
 	
 }
@@ -93,22 +93,22 @@ extension WKInterfaceTable {
 
 extension WKInterfaceTable {
 	
-	class func setDidSelectHandler(cell:AnyObject, handler: Void->Void) {
-		let cellAction = CellActionHandler(handler)
-		objc_setAssociatedObject(cell, &CellActionProperty.key, cellAction,
+	class func setDidSelectHandler(row:AnyObject, handler: Void->Void) {
+		let rowAction = RowActionHandler(handler)
+		objc_setAssociatedObject(row, &RowActionProperty.key, rowAction,
 			objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
 	}
 
 	
 	func handleDidSelectRowAtIndex(rowIndex: Int) {
-		if let cell: AnyObject = rowControllerAtIndex(rowIndex) {
-			if let action = objc_getAssociatedObject(cell, &CellActionProperty.key) as? CellActionHandler {
+		if let row: AnyObject = rowControllerAtIndex(rowIndex) {
+			if let action = objc_getAssociatedObject(row, &RowActionProperty.key) as? RowActionHandler {
 				action.fire()
 			}
 		}
 	}
 
-	private class CellActionHandler : NSObject {
+	private class RowActionHandler : NSObject {
 		let handler: Void->Void
 		init(_ handler: Void->Void ) {
 			self.handler = handler
@@ -118,8 +118,8 @@ extension WKInterfaceTable {
 		}
 	}
 	
-	private struct CellActionProperty {
-		static var key = "cellAction"
+	private struct RowActionProperty {
+		static var key = "rowAction"
 	}
 }
 
