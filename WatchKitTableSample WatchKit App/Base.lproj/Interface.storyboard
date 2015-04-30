@@ -12,7 +12,7 @@
                     <items>
                         <table alignment="left" id="XGY-OT-1q3">
                             <items>
-                                <tableRow identifier="LabelCell" id="HKQ-uy-m5q" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                <tableRow identifier="LabelRowType" id="HKQ-uy-m5q" customClass="LabelRowController" customModule="WatchKitTableSample_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="y0g-yh-Dnq">
                                         <items>
                                             <label width="1" alignment="left" verticalAlignment="center" text="Label" numberOfLines="2" id="qEv-8E-HNb"/>
@@ -35,11 +35,11 @@
         <!--Timer Sample-->
         <scene sceneID="vaq-zf-w2B">
             <objects>
-                <controller identifier="TimerSampleInterface" title="Timer Sample" id="BZU-b6-b7p" customClass="TimerInterfaceController" customModule="WatchKitTableSample_WatchKit_Extension">
+                <controller identifier="TimerSampleInterface" title="Timer Sample" id="BZU-b6-b7p" customClass="TimerTableInterfaceController" customModule="WatchKitTableSample_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="Maw-ki-gmh">
                             <items>
-                                <tableRow identifier="TimerCell" selectable="NO" id="s4P-Dn-5ff" customClass="TimerCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                <tableRow identifier="TimerRowType" selectable="NO" id="s4P-Dn-5ff" customClass="TimerRowController" customModule="WatchKitTableSample_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="bOM-BT-LGd">
                                         <items>
                                             <timer width="1" alignment="left" verticalAlignment="center" textAlignment="center" id="xaV-yH-esR"/>
@@ -49,7 +49,7 @@
                                         <outlet property="timer" destination="xaV-yH-esR" id="gYD-0h-3Ma"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="StartCell" id="t6P-Xx-R0g" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                <tableRow identifier="StartRowType" id="t6P-Xx-R0g" customClass="LabelRowController" customModule="WatchKitTableSample_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="GoK-ZO-fEl">
                                         <items>
                                             <label width="1" alignment="left" verticalAlignment="center" text="Start" textAlignment="center" id="bx3-9J-0tG"/>
@@ -59,7 +59,7 @@
                                         <outlet property="label" destination="bx3-9J-0tG" id="LVI-1v-NEc"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="StopCell" id="p89-Tq-nSo" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                <tableRow identifier="StopRowType" id="p89-Tq-nSo" customClass="LabelRowController" customModule="WatchKitTableSample_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="wdS-7k-HWs">
                                         <items>
                                             <label width="1" alignment="left" verticalAlignment="center" text="Stop" textAlignment="center" id="ucN-0K-4hZ"/>
@@ -86,8 +86,8 @@
                     <items>
                         <table alignment="left" id="iH9-iI-Ccy">
                             <items>
-                                <tableRow identifier="HeaderCell" selectable="NO" id="ScO-yy-YKv" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="30" alignment="left" layout="vertical" radius="0.0" id="d3U-4R-33t" userLabel="CellGroup">
+                                <tableRow identifier="HeaderRowType" selectable="NO" id="ScO-yy-YKv" customClass="LabelRowController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="30" alignment="left" layout="vertical" radius="0.0" id="d3U-4R-33t">
                                         <items>
                                             <group width="1" height="25" alignment="left" verticalAlignment="bottom" radius="5" id="cSd-p6-h0w" userLabel="Round Rect Group">
                                                 <items>
@@ -108,7 +108,7 @@
                                         <outlet property="label" destination="7Im-nG-h66" id="GTJ-H4-KUy"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="ItemCell" selectable="NO" id="I9z-Rh-ASW" customClass="LabelCellController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                <tableRow identifier="ItemRowType" selectable="NO" id="I9z-Rh-ASW" customClass="LabelRowController" customModule="WatchKitTableSample_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" radius="0.0" id="D6h-V3-sIc">
                                         <items>
                                             <label alignment="left" text="Raw apple" id="c41-It-3wq"/>

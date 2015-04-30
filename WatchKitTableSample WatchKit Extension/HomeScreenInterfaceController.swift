@@ -20,21 +20,21 @@ class HomeScreenInterfaceController: WKInterfaceController {
 
 		var builder = WKInterfaceTable.Builder()
 
-		builder.addCell("LabelCell") { (cell: LabelCellController) -> Void in
-			cell.label.setText("Сomposite Table")
-			WKInterfaceTable.setDidSelectHandler(cell) {
+		builder.addRow("LabelRowType") { (row: LabelRowController) -> Void in
+			row.label.setText("Сomposite Table")
+			WKInterfaceTable.setDidSelectHandler(row) {
 				self.pushControllerWithName("CompositeTableInterface", context: nil)
 			}
 		}
 
-		builder.addCell("LabelCell") { (cell: LabelCellController) -> Void in
-			cell.label.setText("Timer Sample")
-			WKInterfaceTable.setDidSelectHandler(cell) {
+		builder.addRow("LabelRowType") { (row: LabelRowController) -> Void in
+			row.label.setText("Timer Table")
+			WKInterfaceTable.setDidSelectHandler(row) {
 				self.pushControllerWithName("TimerSampleInterface", context: nil)
 			}
 		}
 
-		builder.instantiateTableCells(table)
+		builder.instantiateTableRows(table)
     }
 
 	override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {

@@ -43,19 +43,19 @@ class CompositeTableInterfaceController: WKInterfaceController {
 		
 		for section in data {
 			let sectionTitle = section["title"] as! String
-			builder.addCell("HeaderCell") { (cell: LabelCellController) -> Void in
-				cell.label.setText(sectionTitle)
+			builder.addRow("HeaderRowType") { (row: LabelRowController) -> Void in
+				row.label.setText(sectionTitle)
 			}
 			
 			let items = section["items"] as! [String]
 			for item in items {
-				builder.addCell("ItemCell") { (cell: LabelCellController) -> Void in
-					cell.label.setText(item)
+				builder.addRow("ItemRowType") { (row: LabelRowController) -> Void in
+					row.label.setText(item)
 				}
 			}
 		}
 		
-		builder.instantiateTableCells(table)
+		builder.instantiateTableRows(table)
 	}
 	
 

@@ -1,5 +1,5 @@
 //
-//  TimerInterfaceController.swift
+//  TimerTableInterfaceController.swift
 //  WatchKitTableSample
 //
 //  Created by onegray on 4/27/15.
@@ -10,11 +10,11 @@ import WatchKit
 import Foundation
 
 
-class TimerInterfaceController: WKInterfaceController {
+class TimerTableInterfaceController: WKInterfaceController {
 
 	@IBOutlet weak var table: WKInterfaceTable!
 
-	weak var timerCell: TimerCellController?
+	weak var timerRow: TimerRowController?
 	
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -22,24 +22,24 @@ class TimerInterfaceController: WKInterfaceController {
 		
 		var builder = WKInterfaceTable.Builder()
 		
-		builder.addCell("TimerCell") { (cell:TimerCellController) -> Void in
-			cell.timer.setTextColor(UIColor.cyanColor())
-			self.timerCell = cell
+		builder.addRow("TimerRowType") { (row: TimerRowController) -> Void in
+			row.timer.setTextColor(UIColor.cyanColor())
+			self.timerRow = row
 		}
 
-		builder.addCell("StartCell") { (cell:LabelCellController) -> Void in
-			WKInterfaceTable.setDidSelectHandler(cell) {
-				self.timerCell?.timer.start()
+		builder.addRow("StartRowType") { (row: LabelRowController) -> Void in
+			WKInterfaceTable.setDidSelectHandler(row) {
+				self.timerRow?.timer.start()
 			}
 		}
 
-		builder.addCell("StopCell") { (cell:LabelCellController) -> Void in
-			WKInterfaceTable.setDidSelectHandler(cell) {
-				self.timerCell?.timer.stop()
+		builder.addRow("StopRowType") { (row: LabelRowController) -> Void in
+			WKInterfaceTable.setDidSelectHandler(row) {
+				self.timerRow?.timer.stop()
 			}
 		}
 
-		builder.instantiateTableCells(table)
+		builder.instantiateTableRows(table)
     }
 
 	override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {

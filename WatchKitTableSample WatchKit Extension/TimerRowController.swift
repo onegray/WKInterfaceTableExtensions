@@ -1,5 +1,5 @@
 //
-//  LabelCellController.swift
+//  TimerRowController.swift
 //  WatchKitTableSample
 //
 //  Created by onegray on 4/27/15.
@@ -8,8 +8,8 @@
 
 import WatchKit
 
-class LabelCellController: NSObject {
+class TimerRowController: NSObject {
 	
-	@IBOutlet weak var label: WKInterfaceLabel!
+	@IBOutlet weak var timer: WKInterfaceTimer!
 
 }
