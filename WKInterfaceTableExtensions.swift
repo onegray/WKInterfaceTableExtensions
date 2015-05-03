@@ -77,17 +77,63 @@ private class GenericRowConfigureBlock<T> : WKInterfaceTable.Builder.RowConfigur
 
 extension WKInterfaceTable {
 	
-	func insertRowAtIndex (index: Int, rowType: String) -> AnyObject!  {
-		self.insertRowsAtIndexes(NSIndexSet(index: index), withRowType: rowType)
-		return rowControllerAtIndex(index)
+	func insertRowAtIndex (index: Int, rowType: String) -> AnyObject {
+		insertRowsAtIndexes(NSIndexSet(index: index), withRowType: rowType)
+		return rowControllerAtIndex(index)!
+	}
+
+	func insertRowsAtIndex (startIndex:Int, count: Int, rowType: String) -> [AnyObject] {
+		let indexes = NSIndexSet(indexesInRange: NSMakeRange(startIndex, count))
+		insertRowsAtIndexes(indexes, withRowType: rowType)
+		var rows: [AnyObject] = []
+		for i in 0..<count {
+			rows.append(rowControllerAtIndex(startIndex+i)!)
+		}
+		return rows
+	}
+
+	func insertRowsAfter (targetRow: AnyObject, count: Int, rowType: String) -> [AnyObject] {
+		return insertRowsAtIndex(indexOfRow(targetRow)! + 1, count: count, rowType: rowType)
 	}
 	
-	func insertRowAtIndex<T> (index: Int, rowType: String, configure: (row:T) -> Void )  {
-		self.insertRowsAtIndexes(NSIndexSet(index: index), withRowType: rowType)
-		let row = rowControllerAtIndex(index) as! T
-		configure(row: row)
+	
+	func removeRowAtIndex (index: Int) {
+		removeRowsAtIndexes(NSIndexSet(index: index))
 	}
 	
+	func removeRow (row: AnyObject) {
+		if let rowIndex = indexOfRow(row) {
+			removeRowsAtIndexes(NSIndexSet(index: rowIndex))
+		}
+	}
+
+	func removeRows (rows: [AnyObject]) {
+		if rows.count > 0 {
+			let indices = NSMutableIndexSet()
+			var rowIndex = 0
+			for row in rows {
+				if row === rowControllerAtIndex(rowIndex) {
+					indices.addIndex(rowIndex++)
+				} else if let index = indexOfRow(row) {
+					indices.addIndex(index)
+					rowIndex = index + 1
+				}
+			}
+			removeRowsAtIndexes(indices)
+		}
+	}
+
+	
+	func indexOfRow (row: AnyObject) -> Int? {
+		for i in 0..<numberOfRows {
+			if row === rowControllerAtIndex(i) {
+				return i
+			}
+		}
+		return nil
+	}
+	
+
 }
 
 
