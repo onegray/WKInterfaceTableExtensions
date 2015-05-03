@@ -79,6 +79,47 @@
             </objects>
             <point key="canvasLocation" x="266" y="584"/>
         </scene>
+        <!--Folding Table-->
+        <scene sceneID="aVV-ku-8PY">
+            <objects>
+                <controller identifier="FoldingTableInterface" title="Folding Table" id="vbM-M7-u8a" customClass="FoldingTableInterfaceController" customModule="WatchKitTableSample_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="cIf-FT-1Gb">
+                            <items>
+                                <tableRow identifier="SectionRowType" id="Qok-Hc-fpA" customClass="SectionRowController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="24" alignment="left" radius="0.0" id="eZh-hc-Jou">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="BXx-FP-QvP"/>
+                                            <label alignment="right" verticalAlignment="center" text="▼" id="5AG-CK-6O3"/>
+                                        </items>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="arrowLabel" destination="5AG-CK-6O3" id="0Yl-lo-d2T"/>
+                                        <outlet property="titleLabel" destination="BXx-FP-QvP" id="IiT-RO-5sY"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="ItemRowType" selectable="NO" id="M6z-Bg-8cc" customClass="LabelRowController" customModule="WatchKitTableSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="24" alignment="left" radius="0.0" id="d2c-mv-ZOW">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="JlY-Bn-pUA"/>
+                                        </items>
+                                        <edgeInsets key="margins" left="14" right="0.0" top="0.0" bottom="0.0"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="JlY-Bn-pUA" id="Ip4-pf-6WB"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="cIf-FT-1Gb" id="vip-tp-ZFm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="265" y="836"/>
+        </scene>
         <!--Composit Table-->
         <scene sceneID="ONx-pn-pW7">
             <objects>

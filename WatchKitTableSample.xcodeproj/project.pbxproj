@@ -18,6 +18,8 @@
 		AB7D76E11AEE1D21001CF84D /* LabelRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D76E01AEE1D21001CF84D /* LabelRowController.swift */; };
 		AB7D76E31AEE22BA001CF84D /* TimerTableInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D76E21AEE22BA001CF84D /* TimerTableInterfaceController.swift */; };
 		AB7D76E51AEE230D001CF84D /* TimerRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D76E41AEE230D001CF84D /* TimerRowController.swift */; };
+		ABB5CDC91AF41E25005191D4 /* FoldingTableInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5CDC81AF41E25005191D4 /* FoldingTableInterfaceController.swift */; };
+		ABB5CDCB1AF421EA005191D4 /* SectionRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5CDCA1AF421EA005191D4 /* SectionRowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		AB7D76E01AEE1D21001CF84D /* LabelRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelRowController.swift; sourceTree = "<group>"; };
 		AB7D76E21AEE22BA001CF84D /* TimerTableInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTableInterfaceController.swift; sourceTree = "<group>"; };
 		AB7D76E41AEE230D001CF84D /* TimerRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerRowController.swift; sourceTree = "<group>"; };
+		ABB5CDC81AF41E25005191D4 /* FoldingTableInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingTableInterfaceController.swift; sourceTree = "<group>"; };
+		ABB5CDCA1AF421EA005191D4 /* SectionRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionRowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,9 +135,11 @@
 			children = (
 				AB7D76C11AEE06B4001CF84D /* HomeScreenInterfaceController.swift */,
 				AB07FB351AEFBB9000B4B156 /* CompositeTableInterfaceController.swift */,
+				ABB5CDC81AF41E25005191D4 /* FoldingTableInterfaceController.swift */,
 				AB7D76E21AEE22BA001CF84D /* TimerTableInterfaceController.swift */,
 				AB7D76E01AEE1D21001CF84D /* LabelRowController.swift */,
 				AB7D76E41AEE230D001CF84D /* TimerRowController.swift */,
+				ABB5CDCA1AF421EA005191D4 /* SectionRowController.swift */,
 				AB7D76BF1AEE06B4001CF84D /* Supporting Files */,
 			);
 			path = "WatchKitTableSample WatchKit Extension";
@@ -312,6 +318,8 @@
 				AB7D76DF1AEE1847001CF84D /* WKInterfaceTableExtensions.swift in Sources */,
 				AB7D76C21AEE06B4001CF84D /* HomeScreenInterfaceController.swift in Sources */,
 				AB7D76E51AEE230D001CF84D /* TimerRowController.swift in Sources */,
+				ABB5CDC91AF41E25005191D4 /* FoldingTableInterfaceController.swift in Sources */,
+				ABB5CDCB1AF421EA005191D4 /* SectionRowController.swift in Sources */,
 				AB7D76E31AEE22BA001CF84D /* TimerTableInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
